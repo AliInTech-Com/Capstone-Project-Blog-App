@@ -1,0 +1,29 @@
+<%- include('./partials/header'); %>
+    <div class="container p-5">
+        <div class="row">
+
+            <% for(var i=0; i < blogPost.length; i++) { %>
+                <div class="col-4">
+                    <div class="card shadow-sm m-2">
+                        <div class="card-body">
+
+                            <h5 class="card-text"><a href="/view?id=<%= i %>">
+                                    <%= blogPost[i].title %>
+                                </a></h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/edit?id=<%= i %>" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                    <a href="/delete?id=<%= i %>" class="btn btn-sm btn-outline-secondary">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+                    <div class="m-2">
+                        <a href="/add-post" class="btn btn-secondary">Add new Post</a>
+                    </div>
+
+        </div>
+    </div>
+    <%- include('./partials/footer'); %>
